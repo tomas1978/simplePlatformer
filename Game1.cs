@@ -9,8 +9,12 @@ namespace simplePlatformer
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
 
+        Texture2D player;
+        Vector2 playerPos;
+
         public Game1()
         {
+            playerPos=new Vector2(100,100);
             _graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
@@ -28,6 +32,7 @@ namespace simplePlatformer
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
+            player=Content.Load<Texture2D>("player");
         }
 
         protected override void Update(GameTime gameTime)
@@ -45,7 +50,9 @@ namespace simplePlatformer
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
-
+            _spriteBatch.Begin();
+            _spriteBatch.Draw(player, playerPos, Color.White);
+            _spriteBatch.End();
             base.Draw(gameTime);
         }
     }

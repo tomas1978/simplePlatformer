@@ -34,3 +34,4 @@ C:\Users\tomas\OneDrive\Dokument\programmering1\simplePlatformer\obj\Debug\netco
 C:\Users\tomas\OneDrive\Dokument\programmering1\simplePlatformer\obj\Debug\netcoreapp3.1\simplePlatformer.dll
 C:\Users\tomas\OneDrive\Dokument\programmering1\simplePlatformer\obj\Debug\netcoreapp3.1\simplePlatformer.pdb
 C:\Users\tomas\OneDrive\Dokument\programmering1\simplePlatformer\obj\Debug\netcoreapp3.1\simplePlatformer.genruntimeconfig.cache
+C:\Users\tomas\OneDrive\Dokument\programmering1\simplePlatformer\bin\Debug\netcoreapp3.1\Content\player.xnb
