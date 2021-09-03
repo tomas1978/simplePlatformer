@@ -1,2 +1,3 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
-"C:/Users/tomas/OneDrive/Dokument/programmering1/simplePlatformer/Content/player.png","C:/Users/tomas/OneDrive/Dokument/programmering1/simplePlatformer/Content/bin/Windows/player.xnb","TextureProcessor","Texture2DContent",176,8365,1,3286865
+"C:/Users/tomas/OneDrive/Dokument/programmering1/simplePlatformer/Content/platform.png","C:/Users/tomas/OneDrive/Dokument/programmering1/simplePlatformer/Content/bin/Windows/platform.xnb","TextureProcessor","Texture2DContent",199,30885,1,0106692
+"C:/Users/tomas/OneDrive/Dokument/programmering1/simplePlatformer/Content/player.png","C:/Users/tomas/OneDrive/Dokument/programmering1/simplePlatformer/Content/bin/Windows/player.xnb","TextureProcessor","Texture2DContent",176,8365,0,0325801

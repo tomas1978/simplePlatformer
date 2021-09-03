@@ -4,9 +4,11 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
+    <File>C:/Users/tomas/OneDrive/Dokument/programmering1/simplePlatformer/Content/platform.png</File>
     <File>C:/Users/tomas/OneDrive/Dokument/programmering1/simplePlatformer/Content/player.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
   </DestFiles>
 </SourceFileCollection>

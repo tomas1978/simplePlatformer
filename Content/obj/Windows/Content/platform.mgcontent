@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Users/tomas/OneDrive/Dokument/programmering1/simplePlatformer/Content/player.png</SourceFile>
-  <SourceTime>2021-09-02T19:43:36.1812523+02:00</SourceTime>
-  <DestFile>C:/Users/tomas/OneDrive/Dokument/programmering1/simplePlatformer/Content/bin/Windows/player.xnb</DestFile>
-  <DestTime>2021-09-03T20:02:54.1573613+02:00</DestTime>
+  <SourceFile>C:/Users/tomas/OneDrive/Dokument/programmering1/simplePlatformer/Content/platform.png</SourceFile>
+  <SourceTime>2021-09-03T20:01:40.4452266+02:00</SourceTime>
+  <DestFile>C:/Users/tomas/OneDrive/Dokument/programmering1/simplePlatformer/Content/bin/Windows/Content/platform.xnb</DestFile>
+  <DestTime>2021-09-03T20:22:41.0652724+02:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2020-08-10T16:17:54+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

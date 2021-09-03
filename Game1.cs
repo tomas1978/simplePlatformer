@@ -12,9 +12,18 @@ namespace simplePlatformer
         Texture2D player;
         Vector2 playerPos;
 
+        Texture2D platform1;
+        Vector2 platform1Pos;
+
+        Texture2D platform2;
+        Vector2 platform2Pos;
+
         public Game1()
         {
             playerPos=new Vector2(100,100);
+            platform1Pos=new Vector2(50, 200);
+            platform2Pos=new Vector2(430, 150);
+            
             _graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
@@ -33,6 +42,9 @@ namespace simplePlatformer
 
             // TODO: use this.Content to load your game content here
             player=Content.Load<Texture2D>("player");
+            platform1=Content.Load<Texture2D>("platform");
+            platform2=Content.Load<Texture2D>("platform");
+            
         }
 
         protected override void Update(GameTime gameTime)
@@ -52,6 +64,9 @@ namespace simplePlatformer
             // TODO: Add your drawing code here
             _spriteBatch.Begin();
             _spriteBatch.Draw(player, playerPos, Color.White);
+            _spriteBatch.Draw(platform1, platform1Pos, Color.White);
+            _spriteBatch.Draw(platform2, platform2Pos, Color.White);
+
             _spriteBatch.End();
             base.Draw(gameTime);
         }
