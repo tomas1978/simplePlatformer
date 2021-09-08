@@ -57,8 +57,12 @@ namespace simplePlatformer
             if(Keyboard.GetState().IsKeyDown(Keys.Up)) {
                 playerRect.Y-=6;
             } 
-
-            // TODO: Add your update logic here
+            if(Keyboard.GetState().IsKeyDown(Keys.Right)) {
+                playerRect.X++;
+            }
+            if(Keyboard.GetState().IsKeyDown(Keys.Left)) {
+                playerRect.X--;
+            }
 
             base.Update(gameTime);
         }
