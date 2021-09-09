@@ -18,6 +18,8 @@ namespace simplePlatformer
         Texture2D platform2;
         Rectangle platform2Rect;
 
+        
+
         public Game1()
         {
             playerRect=new Rectangle(100,80,50,50);
@@ -49,7 +51,7 @@ namespace simplePlatformer
 
         protected override void Update(GameTime gameTime)
         {
-            if(!playerRect.Intersects(platform1Rect))
+            if(!playerRect.Intersects(platform1Rect) && ! playerRect.Intersects(platform2Rect))
                 playerRect.Y+=2;
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
