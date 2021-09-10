@@ -55,6 +55,8 @@ namespace simplePlatformer
                 playerRect.Y+=2;
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
+            if(playerRect.Y>800)
+                Exit();
 
             if(Keyboard.GetState().IsKeyDown(Keys.Up)) {
                 playerRect.Y-=6;
