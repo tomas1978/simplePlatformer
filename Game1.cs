@@ -18,8 +18,6 @@ namespace simplePlatformer
         Texture2D platform2;
         Rectangle platform2Rect;
 
-        
-
         public Game1()
         {
             playerRect=new Rectangle(100,80,50,50);
