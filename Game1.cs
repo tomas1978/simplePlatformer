@@ -9,6 +9,7 @@ namespace simplePlatformer
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
 
+        Sprite playerSprite;
         Texture2D player;
         Rectangle playerRect;
 
@@ -44,7 +45,7 @@ namespace simplePlatformer
             player=Content.Load<Texture2D>("player");
             platform1=Content.Load<Texture2D>("platform");
             platform2=Content.Load<Texture2D>("platform");
-            
+            playerSprite=new Sprite(player, playerRect);
         }
 
         protected override void Update(GameTime gameTime)
@@ -76,6 +77,7 @@ namespace simplePlatformer
             // TODO: Add your drawing code here
             _spriteBatch.Begin();
             _spriteBatch.Draw(player, playerRect, Color.White);
+            _spriteBatch.Draw(playerSprite.SpriteTexture, playerSprite.SpriteRect, Color.White);
             _spriteBatch.Draw(platform1, platform1Rect, Color.White);
             _spriteBatch.Draw(platform2, platform2Rect, Color.White);
 
