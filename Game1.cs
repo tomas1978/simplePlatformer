@@ -57,6 +57,8 @@ namespace simplePlatformer
             if(playerRect.Y>800)
                 Exit();
 
+            playerSprite.Update();
+
             if(Keyboard.GetState().IsKeyDown(Keys.Up)) {
                 playerRect.Y-=6;
             } 

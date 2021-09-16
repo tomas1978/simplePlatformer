@@ -10,11 +10,18 @@ namespace simplePlatformer {
         public Sprite(Texture2D texture, Rectangle rect) {
             SpriteTexture=texture;
             SpriteRect=rect;
-            //this.Load(texture);
         }
 
-        /*public void Load(Texture2D texture) {
-            Game1.Content.LoadContent<Texture2D>(texture);
-        }*/
+        public void Update() {
+            if(Keyboard.GetState().IsKeyDown(Keys.Up)) {
+                this.SpriteRect.Y-=6;
+            } 
+            if(Keyboard.GetState().IsKeyDown(Keys.Right)) {
+                this.SpriteRect.X++;
+            }
+            if(Keyboard.GetState().IsKeyDown(Keys.Left)) {
+                this.SpriteRect.X--;
+            }
+        }
     }
 }
