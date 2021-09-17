@@ -14,13 +14,14 @@ namespace simplePlatformer {
 
         public void Update() {
             if(Keyboard.GetState().IsKeyDown(Keys.Up)) {
-                this.SpriteRect.Y-=6;
+                this.SpriteRect=new Rectangle(this.SpriteRect.X, this.SpriteRect.Y-6, this.SpriteRect.Width, this.SpriteRect.Height);
+                //this.SpriteRect.Y-=6;
             } 
             if(Keyboard.GetState().IsKeyDown(Keys.Right)) {
-                this.SpriteRect.X++;
+                ;//this.SpriteRect.X++;
             }
             if(Keyboard.GetState().IsKeyDown(Keys.Left)) {
-                this.SpriteRect.X--;
+                ;//this.SpriteRect.X--;
             }
         }
     }
