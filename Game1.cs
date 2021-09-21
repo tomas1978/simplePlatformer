@@ -50,8 +50,13 @@ namespace simplePlatformer
 
         protected override void Update(GameTime gameTime)
         {
-            if(!playerRect.Intersects(platform1Rect) && ! playerRect.Intersects(platform2Rect))
-                playerRect.Y+=2;
+            if(!playerSprite.SpriteRect.Intersects(platform1Rect) && ! playerSprite.SpriteRect.Intersects(platform2Rect)) {
+                playerSprite.SpriteRect=new Rectangle(playerSprite.SpriteRect.X,
+                    playerSprite.SpriteRect.Y+2,playerSprite.SpriteRect.Width,playerSprite.SpriteRect.Height);
+
+            }
+                //playerSprite.SpriteRect.Y+=2;
+
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
             if(playerRect.Y>800)

@@ -15,15 +15,12 @@ namespace simplePlatformer {
         public void Update() {
             if(Keyboard.GetState().IsKeyDown(Keys.Up)) {
                 this.SpriteRect=new Rectangle(this.SpriteRect.X, this.SpriteRect.Y-6, this.SpriteRect.Width, this.SpriteRect.Height);
-                //this.SpriteRect.Y-=6;
             } 
             if(Keyboard.GetState().IsKeyDown(Keys.Right)) {
                 this.SpriteRect=new Rectangle(this.SpriteRect.X+1, this.SpriteRect.Y, this.SpriteRect.Width, this.SpriteRect.Height);
-                //this.SpriteRect.X++;
             }
             if(Keyboard.GetState().IsKeyDown(Keys.Left)) {
                 this.SpriteRect=new Rectangle(this.SpriteRect.X, this.SpriteRect.Y+1, this.SpriteRect.Width, this.SpriteRect.Height);
-                ;//this.SpriteRect.X--;
             }
         }
     }
