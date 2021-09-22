@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Users/tomnil001/Desktop/platformer/simplePlatformer-main (1)/simplePlatformer-main/Content/platform.png</SourceFile>
-  <SourceTime>2021-09-21T15:22:16.7213196+02:00</SourceTime>
-  <DestFile>C:/Users/tomnil001/Desktop/platformer/simplePlatformer-main (1)/simplePlatformer-main/Content/bin/Windows/Content/platform.xnb</DestFile>
-  <DestTime>2021-09-21T15:23:03.3901095+02:00</DestTime>
+  <SourceFile>C:/Users/Tomas/Documents/programmering/simplePlatformer/22sep/simplePlatformer/simplePlatformer-main/Content/platform.png</SourceFile>
+  <SourceTime>2021-09-21T15:43:50+02:00</SourceTime>
+  <DestFile>C:/Users/Tomas/Documents/programmering/simplePlatformer/22sep/simplePlatformer/simplePlatformer-main/Content/bin/Windows/Content/platform.xnb</DestFile>
+  <DestTime>2021-09-22T13:54:55.3338534+02:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2020-08-10T16:17:54+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
