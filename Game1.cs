@@ -71,7 +71,8 @@ namespace simplePlatformer
 
             // TODO: Add your drawing code here
             _spriteBatch.Begin();
-            _spriteBatch.Draw(playerSprite.SpriteTexture, playerSprite.SpriteRect, Color.White);
+            playerSprite.Draw(_spriteBatch);
+            //_spriteBatch.Draw(playerSprite.SpriteTexture, playerSprite.SpriteRect, Color.White);
             _spriteBatch.Draw(platform1, platform1Rect, Color.White);
             _spriteBatch.Draw(platform2, platform2Rect, Color.White);
 

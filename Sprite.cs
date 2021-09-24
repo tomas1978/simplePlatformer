@@ -20,8 +20,13 @@ namespace simplePlatformer {
                 this.SpriteRect=new Rectangle(this.SpriteRect.X+1, this.SpriteRect.Y, this.SpriteRect.Width, this.SpriteRect.Height);
             }
             if(Keyboard.GetState().IsKeyDown(Keys.Left)) {
-                this.SpriteRect=new Rectangle(this.SpriteRect.X, this.SpriteRect.Y+1, this.SpriteRect.Width, this.SpriteRect.Height);
+                this.SpriteRect=new Rectangle(this.SpriteRect.X-1, this.SpriteRect.Y, this.SpriteRect.Width, this.SpriteRect.Height);
             }
+        }
+
+        public void Draw(SpriteBatch sb) {
+            sb.Draw(this.SpriteTexture, this.SpriteRect, Color.CornflowerBlue);
+
         }
     }
 }
