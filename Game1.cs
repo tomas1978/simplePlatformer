@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System.Collections.Generic;
 
 namespace simplePlatformer
 {
@@ -12,11 +13,13 @@ namespace simplePlatformer
         Sprite playerSprite;
         Texture2D player;
 
-        Texture2D platform1;
+        Texture2D platform;
         Rectangle platform1Rect;
 
         Texture2D platform2;
         Rectangle platform2Rect;
+
+        List<Sprite> platformList = new List<Sprite>();
 
         public Game1()
         {
@@ -41,9 +44,10 @@ namespace simplePlatformer
 
             // TODO: use this.Content to load your game content here
             player=Content.Load<Texture2D>("player");
-            platform1=Content.Load<Texture2D>("platform");
+            platform=Content.Load<Texture2D>("platform");
             platform2=Content.Load<Texture2D>("platform");
             playerSprite=new Sprite(player, new Rectangle(100,80,50,50));
+            platformList.Add(new Sprite(platform, new Rectangle(50,200,300,20)));
         }
 
         protected override void Update(GameTime gameTime)
@@ -73,7 +77,7 @@ namespace simplePlatformer
             _spriteBatch.Begin();
             playerSprite.Draw(_spriteBatch);
             //_spriteBatch.Draw(playerSprite.SpriteTexture, playerSprite.SpriteRect, Color.White);
-            _spriteBatch.Draw(platform1, platform1Rect, Color.White);
+            _spriteBatch.Draw(platform, platform1Rect, Color.White);
             _spriteBatch.Draw(platform2, platform2Rect, Color.White);
 
             _spriteBatch.End();
