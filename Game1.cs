@@ -48,11 +48,19 @@ namespace simplePlatformer
             platform2=Content.Load<Texture2D>("platform");
             playerSprite=new Sprite(player, new Rectangle(100,80,50,50));
             platformList.Add(new Sprite(platform, new Rectangle(50,200,300,20)));
+            platformList.Add(new Sprite(platform, new Rectangle(430, 150, 200, 20)));
         }
 
         protected override void Update(GameTime gameTime)
         {
-            if(!playerSprite.SpriteRect.Intersects(platform1Rect) && ! playerSprite.SpriteRect.Intersects(platform2Rect)) {
+            bool onPlatform=true;
+            foreach(Sprite p in platformList) {
+                 if(!playerSprite.SpriteRect.Intersects(p.SpriteRect))
+                    onPlatform=false;
+            }
+
+            //if(!playerSprite.SpriteRect.Intersects(platform1Rect) && ! playerSprite.SpriteRect.Intersects(platform2Rect)) {
+            if(!onPlatform) {   
                 playerSprite.SpriteRect=new Rectangle(playerSprite.SpriteRect.X,
                     playerSprite.SpriteRect.Y+2,playerSprite.SpriteRect.Width,playerSprite.SpriteRect.Height);
 
@@ -77,9 +85,12 @@ namespace simplePlatformer
             _spriteBatch.Begin();
             playerSprite.Draw(_spriteBatch);
             //_spriteBatch.Draw(playerSprite.SpriteTexture, playerSprite.SpriteRect, Color.White);
-            _spriteBatch.Draw(platform, platform1Rect, Color.White);
-            _spriteBatch.Draw(platform2, platform2Rect, Color.White);
-
+            //_spriteBatch.Draw(platform, platform1Rect, Color.White);
+            //_spriteBatch.Draw(platform2, platform2Rect, Color.White);
+            foreach(Sprite p in platformList) {
+                _spriteBatch.Draw(p.SpriteTexture, p.SpriteRect, Color.White);
+            }
+            
             _spriteBatch.End();
             base.Draw(gameTime);
         }
