@@ -21,6 +21,8 @@ namespace simplePlatformer
 
         List<Sprite> platformList = new List<Sprite>();
 
+        int fallSpeed=1;
+
         public Game1()
         {
             platform1Rect=new Rectangle(50,200,300,20);
@@ -53,16 +55,21 @@ namespace simplePlatformer
 
         protected override void Update(GameTime gameTime)
         {
-            bool onPlatform=true;
+            bool onPlatform=false;
             foreach(Sprite p in platformList) {
-                 if(!playerSprite.SpriteRect.Intersects(p.SpriteRect))
-                    onPlatform=false;
+                if(playerSprite.SpriteRect.Intersects(p.SpriteRect)) {
+                    fallSpeed=0;
+                }
+                else {
+                    fallSpeed=1;
+                }
+                
             }
 
             //if(!playerSprite.SpriteRect.Intersects(platform1Rect) && ! playerSprite.SpriteRect.Intersects(platform2Rect)) {
-            if(!onPlatform) {   
+            if(fallSpeed!=0) {   
                 playerSprite.SpriteRect=new Rectangle(playerSprite.SpriteRect.X,
-                    playerSprite.SpriteRect.Y+2,playerSprite.SpriteRect.Width,playerSprite.SpriteRect.Height);
+                    playerSprite.SpriteRect.Y+fallSpeed,playerSprite.SpriteRect.Width,playerSprite.SpriteRect.Height);
 
             }
                 //playerSprite.SpriteRect.Y+=2;
