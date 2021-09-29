@@ -14,10 +14,8 @@ namespace simplePlatformer
         Texture2D player;
 
         Texture2D platform;
-        Rectangle platform1Rect;
-
         Texture2D platform2;
-        Rectangle platform2Rect;
+
 
         List<Sprite> platformList = new List<Sprite>();
 
@@ -25,9 +23,6 @@ namespace simplePlatformer
 
         public Game1()
         {
-            platform1Rect=new Rectangle(50,200,300,20);
-            platform2Rect=new Rectangle(430, 150, 200, 20);
-            
             _graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
@@ -43,36 +38,28 @@ namespace simplePlatformer
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
-
-            // TODO: use this.Content to load your game content here
             player=Content.Load<Texture2D>("player");
             platform=Content.Load<Texture2D>("platform");
             platform2=Content.Load<Texture2D>("platform");
             playerSprite=new Sprite(player, new Rectangle(100,80,50,50));
             platformList.Add(new Sprite(platform, new Rectangle(50,200,300,20)));
             platformList.Add(new Sprite(platform, new Rectangle(430, 150, 200, 20)));
+            platformList.Add(new Sprite(platform, new Rectangle(600, 100, 200, 20)));
+            
         }
 
         protected override void Update(GameTime gameTime)
         {
             bool onPlatform=false;
+            fallSpeed=1;
             foreach(Sprite p in platformList) {
                 if(playerSprite.SpriteRect.Intersects(p.SpriteRect)) {
                     fallSpeed=0;
                 }
-                else {
-                    fallSpeed=1;
-                }
-                
             }
 
-            //if(!playerSprite.SpriteRect.Intersects(platform1Rect) && ! playerSprite.SpriteRect.Intersects(platform2Rect)) {
-            if(fallSpeed!=0) {   
-                playerSprite.SpriteRect=new Rectangle(playerSprite.SpriteRect.X,
+            playerSprite.SpriteRect=new Rectangle(playerSprite.SpriteRect.X,
                     playerSprite.SpriteRect.Y+fallSpeed,playerSprite.SpriteRect.Width,playerSprite.SpriteRect.Height);
-
-            }
-                //playerSprite.SpriteRect.Y+=2;
 
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
@@ -80,7 +67,6 @@ namespace simplePlatformer
                 Exit();
 
             playerSprite.Update();
-
             base.Update(gameTime);
         }
 
@@ -88,12 +74,8 @@ namespace simplePlatformer
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            // TODO: Add your drawing code here
             _spriteBatch.Begin();
             playerSprite.Draw(_spriteBatch);
-            //_spriteBatch.Draw(playerSprite.SpriteTexture, playerSprite.SpriteRect, Color.White);
-            //_spriteBatch.Draw(platform, platform1Rect, Color.White);
-            //_spriteBatch.Draw(platform2, platform2Rect, Color.White);
             foreach(Sprite p in platformList) {
                 _spriteBatch.Draw(p.SpriteTexture, p.SpriteRect, Color.White);
             }
