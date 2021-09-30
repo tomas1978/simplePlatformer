@@ -11,15 +11,8 @@ namespace simplePlatformer
         private SpriteBatch _spriteBatch;
 
         Sprite playerSprite;
-        Texture2D player;
-
-        Texture2D platform;
-        Texture2D platform2;
-
 
         List<Sprite> platformList = new List<Sprite>();
-
-        int fallSpeed=1;
 
         public Game1()
         {
@@ -37,10 +30,11 @@ namespace simplePlatformer
 
         protected override void LoadContent()
         {
+            Texture2D platform=Content.Load<Texture2D>("platform");
+            Texture2D player;
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             player=Content.Load<Texture2D>("player");
-            platform=Content.Load<Texture2D>("platform");
-            platform2=Content.Load<Texture2D>("platform");
+            
             playerSprite=new Sprite(player, new Rectangle(100,80,50,50));
             platformList.Add(new Sprite(platform, new Rectangle(50,200,300,20)));
             platformList.Add(new Sprite(platform, new Rectangle(430, 150, 200, 20)));
@@ -50,8 +44,7 @@ namespace simplePlatformer
 
         protected override void Update(GameTime gameTime)
         {
-            bool onPlatform=false;
-            fallSpeed=1;
+            int fallSpeed=1;
             foreach(Sprite p in platformList) {
                 if(playerSprite.SpriteRect.Intersects(p.SpriteRect)) {
                     fallSpeed=0;
