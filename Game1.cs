@@ -11,6 +11,7 @@ namespace simplePlatformer
         private SpriteBatch _spriteBatch;
 
         Sprite playerSprite;
+        Sprite enemy;
 
         List<Sprite> platformList = new List<Sprite>();
 
@@ -31,11 +32,15 @@ namespace simplePlatformer
         protected override void LoadContent()
         {
             Texture2D platform=Content.Load<Texture2D>("platform");
-            Texture2D player;
+            Texture2D playerTexture;
+            Texture2D enemyTexture;
             _spriteBatch = new SpriteBatch(GraphicsDevice);
-            player=Content.Load<Texture2D>("player");
+            playerTexture=Content.Load<Texture2D>("player");
+            enemyTexture=Content.Load<Texture2D>("enemy");
+
             
-            playerSprite=new Sprite(player, new Rectangle(100,80,50,50));
+            playerSprite=new Sprite(playerTexture, new Rectangle(100,80,50,50));
+            enemy=new Sprite(enemyTexture, new Rectangle(460,100,40,40));
             platformList.Add(new Sprite(platform, new Rectangle(50,200,300,20)));
             platformList.Add(new Sprite(platform, new Rectangle(430, 150, 200, 20)));
             platformList.Add(new Sprite(platform, new Rectangle(600, 100, 200, 20)));
@@ -72,6 +77,7 @@ namespace simplePlatformer
             foreach(Sprite p in platformList) {
                 _spriteBatch.Draw(p.SpriteTexture, p.SpriteRect, Color.White);
             }
+            enemy.Draw(_spriteBatch);
             
             _spriteBatch.End();
             base.Draw(gameTime);
