@@ -56,6 +56,13 @@ namespace simplePlatformer
                 }
             }
 
+            int enemyFallSpeed=0;
+            foreach(Sprite p in platformList) {
+                if(enemy.SpriteRect.Intersects(p.SpriteRect)) {
+                    enemyFallSpeed=0;
+                }
+            }
+
             playerSprite.SpriteRect=new Rectangle(playerSprite.SpriteRect.X,
                     playerSprite.SpriteRect.Y+fallSpeed,playerSprite.SpriteRect.Width,playerSprite.SpriteRect.Height);
 
