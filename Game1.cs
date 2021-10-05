@@ -37,7 +37,6 @@ namespace simplePlatformer
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             playerTexture=Content.Load<Texture2D>("player");
             enemyTexture=Content.Load<Texture2D>("enemy");
-
             
             playerSprite=new Sprite(playerTexture, new Rectangle(100,80,50,50));
             enemy=new Sprite(enemyTexture, new Rectangle(460,100,40,40));
@@ -56,6 +55,9 @@ namespace simplePlatformer
                 }
             }
 
+            playerSprite.SpriteRect=new Rectangle(playerSprite.SpriteRect.X,
+                playerSprite.SpriteRect.Y+fallSpeed,playerSprite.SpriteRect.Width,playerSprite.SpriteRect.Height);
+
             int enemyFallSpeed=0;
             foreach(Sprite p in platformList) {
                 if(enemy.SpriteRect.Intersects(p.SpriteRect)) {
@@ -63,9 +65,10 @@ namespace simplePlatformer
                 }
             }
 
-            playerSprite.SpriteRect=new Rectangle(playerSprite.SpriteRect.X,
-                    playerSprite.SpriteRect.Y+fallSpeed,playerSprite.SpriteRect.Width,playerSprite.SpriteRect.Height);
+            enemy.SpriteRect=new Rectangle(enemy.SpriteRect.X,
+                enemy.SpriteRect.Y+enemyFallSpeed,enemy.SpriteRect.Width,enemy.SpriteRect.Height);
 
+   
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
             if(playerSprite.SpriteRect.Y>800)
