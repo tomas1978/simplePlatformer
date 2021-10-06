@@ -39,7 +39,7 @@ namespace simplePlatformer
             enemyTexture=Content.Load<Texture2D>("enemy");
             
             playerSprite=new Sprite(playerTexture, new Rectangle(100,80,50,50));
-            enemy=new Sprite(enemyTexture, new Rectangle(460,100,40,40));
+            enemy=new Sprite(enemyTexture, new Rectangle(460,60,40,40));
             platformList.Add(new Sprite(platform, new Rectangle(50,200,300,20)));
             platformList.Add(new Sprite(platform, new Rectangle(430, 150, 200, 20)));
             platformList.Add(new Sprite(platform, new Rectangle(600, 100, 200, 20)));
@@ -58,7 +58,7 @@ namespace simplePlatformer
             playerSprite.SpriteRect=new Rectangle(playerSprite.SpriteRect.X,
                 playerSprite.SpriteRect.Y+fallSpeed,playerSprite.SpriteRect.Width,playerSprite.SpriteRect.Height);
 
-            int enemyFallSpeed=0;
+            int enemyFallSpeed=1;
             foreach(Sprite p in platformList) {
                 if(enemy.SpriteRect.Intersects(p.SpriteRect)) {
                     enemyFallSpeed=0;
