@@ -12,6 +12,11 @@ namespace simplePlatformer {
             SpriteRect=rect;
         }
 
+        void Move(Vector2 direction) {
+            SpriteRect=new Rectangle(SpriteRect.X+(int)direction.X, SpriteRect.Y+(int)direction.Y,
+                SpriteRect.Width, SpriteRect.Height);
+        }
+
         public void Update() {
             if(Keyboard.GetState().IsKeyDown(Keys.Up)) {
                 this.SpriteRect=new Rectangle(this.SpriteRect.X, this.SpriteRect.Y-6, this.SpriteRect.Width, this.SpriteRect.Height);
