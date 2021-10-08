@@ -55,6 +55,8 @@ namespace simplePlatformer
                 }
             }
 
+            enemy.Move(new Vector2(enemy.SpriteRect.X+1, enemy.SpriteRect.Y));
+            
             playerSprite.SpriteRect=new Rectangle(playerSprite.SpriteRect.X,
                 playerSprite.SpriteRect.Y+fallSpeed,playerSprite.SpriteRect.Width,playerSprite.SpriteRect.Height);
 

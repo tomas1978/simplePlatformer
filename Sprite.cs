@@ -12,7 +12,7 @@ namespace simplePlatformer {
             SpriteRect=rect;
         }
 
-        void Move(Vector2 direction) {
+        public void Move(Vector2 direction) {
             SpriteRect=new Rectangle(SpriteRect.X+(int)direction.X, SpriteRect.Y+(int)direction.Y,
                 SpriteRect.Width, SpriteRect.Height);
         }
