@@ -6,10 +6,12 @@ namespace simplePlatformer {
     class Sprite {
         public Texture2D SpriteTexture {set; get;}
         public Rectangle SpriteRect {set; get;}
+        public int Distance{get; set;}
 
         public Sprite(Texture2D texture, Rectangle rect) {
             SpriteTexture=texture;
             SpriteRect=rect;
+            Distance=0;
         }
 
         public void Move(Vector2 direction) {

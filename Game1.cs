@@ -55,7 +55,13 @@ namespace simplePlatformer
                 }
             }
 
-            enemy.Move(new Vector2(enemy.SpriteRect.X+1, enemy.SpriteRect.Y));
+            int enemyDirection=1;
+            enemy.Move(new Vector2(enemyDirection, 0));
+            enemy.Distance++;
+            if(enemy.Distance>15) {
+                enemy.Distance=0;
+                enemyDirection*=-1;
+            }
             
             playerSprite.SpriteRect=new Rectangle(playerSprite.SpriteRect.X,
                 playerSprite.SpriteRect.Y+fallSpeed,playerSprite.SpriteRect.Width,playerSprite.SpriteRect.Height);
