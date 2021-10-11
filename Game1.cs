@@ -55,10 +55,10 @@ namespace simplePlatformer
                 }
             }
 
-            int enemyDirection=1;
+            int enemyDirection=-1;
             enemy.Move(new Vector2(enemyDirection, 0));
             enemy.Distance++;
-            if(enemy.Distance>15) {
+            if(System.Math.Abs(enemy.Distance)>5) {
                 enemy.Distance=0;
                 enemyDirection*=-1;
             }
